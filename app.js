@@ -13,13 +13,13 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
     connectToDatabase();
-    console.log(`API listening on PORT ${process.env.PORT} `)
+    console.log(`API listening on PORT ${3000} `)
 })
 
 const generateToken = (id) => {
-    return jwt.sign({ id }, process.env.JWT_TOKEN, {
+    return jwt.sign({ id }, "dslkvjcdslkckdsmclkdsmlkm_dslkmcdlskmcdsklmldskmnclkm", {
         expiresIn: "30d",
     });
 };
