@@ -3,7 +3,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 const connectToDatabase = require('./Config/db');
 const User = require('./Models/User');
 
@@ -44,12 +44,12 @@ app.post('/new-user', async (req, res) => {
             });
         }
 
-        const saltRounds = 10;
-        const encryptedPassword = await bcrypt.hash(password, saltRounds);
+        // const saltRounds = 10;
+        // const encryptedPassword = await bcrypt.hash(password, saltRounds);
 
         const newUser = new User({
             email,
-            password: encryptedPassword,
+            password,
             phoneNumber,
             location,
             longitude,
